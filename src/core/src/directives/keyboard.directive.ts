@@ -10,15 +10,15 @@ import { MatKeyboardService } from '../services/keyboard.service';
 })
 export class MatKeyboardDirective implements OnDestroy {
 
-  private _keyboardRef: MatKeyboardRef<MatKeyboardComponent>;
+  private _keyboardRef!: MatKeyboardRef<MatKeyboardComponent>;
 
-  @Input() matKeyboard: string;
+  @Input() matKeyboard!: string;
 
-  @Input() darkTheme: boolean;
+  @Input() darkTheme!: boolean;
 
-  @Input() duration: number;
+  @Input() duration!: number;
 
-  @Input() isDebug: boolean;
+  @Input() isDebug!: boolean;
 
   @Output() enterClick: EventEmitter<void> = new EventEmitter<void>();
 
@@ -48,7 +48,7 @@ export class MatKeyboardDirective implements OnDestroy {
     this._keyboardRef.instance.setInputInstance(this._elementRef);
 
     // set control if given, cast to smth. non-abstract
-    if (this._control) {
+    if (this._control && this._control.control) {
       this._keyboardRef.instance.attachControl(this._control.control);
     }
 

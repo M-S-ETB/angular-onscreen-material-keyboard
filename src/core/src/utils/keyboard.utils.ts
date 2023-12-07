@@ -22,9 +22,11 @@ export function _applyAvailableLayouts(layouts: IKeyboardLayouts): ILocaleMap {
     .keys(layouts)
     .filter((layout: string) => 'lang' in layouts[layout])
     .forEach((layout: string) => {
-      layouts[layout].lang.forEach((lang: string) => {
-        _availableLocales[lang] = layout;
-      });
+      if (layouts[layout].lang) {
+        layouts[layout].lang.forEach((lang: string) => {
+          _availableLocales[lang] = layout;
+        });
+      }
     });
 
   return _availableLocales;

@@ -91,7 +91,7 @@ export class MatKeyboardComponent implements OnInit {
   get control(){
     return this._control as FormControl
   }
- 
+
   // inject dependencies
   constructor(@Inject(LOCALE_ID) private _locale: string,
               private _keyboardService: MatKeyboardService) { }

@@ -33,7 +33,7 @@ export class MatKeyboardService {
     return parent ? parent._openedKeyboardRef : this._keyboardRefAtThisLevel;
   }
 
-  private set _openedKeyboardRef(value: MatKeyboardRef<MatKeyboardComponent>) {
+  private set _openedKeyboardRef(value: MatKeyboardRef<MatKeyboardComponent> | null) {
     if (this._parentKeyboard) {
       this._parentKeyboard._openedKeyboardRef = value;
     } else {
@@ -78,7 +78,7 @@ export class MatKeyboardService {
     }
 
     // a layout name is provided
-    if (this._layouts[layoutOrLocale]) {
+    if (this._layouts[layoutOrLocale] && this._layouts[layoutOrLocale].lang) {
       keyboardRef.instance.layout = this._layouts[layoutOrLocale];
       keyboardRef.instance.locale = this._layouts[layoutOrLocale].lang && this._layouts[layoutOrLocale].lang.pop();
     }
@@ -151,8 +151,8 @@ export class MatKeyboardService {
    * @param locale The layout name
    */
   mapLocale(locale: string = this._defaultLocale): string {
-    let layout: string;
-    const country = locale
+    let layout: string = undefined;
+    const country: string = locale
       .split('-')
       .shift();
 

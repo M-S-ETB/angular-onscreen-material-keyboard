@@ -11,16 +11,16 @@ export class MatKeyboardConfig {
   announcementMessage? = '';
 
   /** The view container to place the overlay for the keyboard into. */
-  viewContainerRef?: ViewContainerRef = null;
+  viewContainerRef?: ViewContainerRef | null = null;
 
   /** The length of time in milliseconds to wait before automatically dismissing the keyboard after blur. */
   duration? = 0;
 
   /** Enable a dark keyboard */
-  darkTheme? = null;
+  darkTheme?: boolean = false;
 
   /** Enable the debug view */
-  isDebug? = false;
+  isDebug?: boolean = false;
 
   /** Enable the debug view */
   ngControl?: NgControl;
