@@ -34,8 +34,6 @@ jobs:
       - name: Configure npm
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_TOKEN }}" > .npmrc
 
-      - name: Publish
-        uses: JS-DevTools/npm-publish@v3
-        with:
-          package: ./dist/core/package.json
-          token: ${{ secrets.GH_PACKAGES_TOKEN }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
