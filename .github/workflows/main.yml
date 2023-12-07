@@ -21,7 +21,7 @@ jobs:
         id: publish
         uses: JS-DevTools/npm-publish@v3
         with:
-          token: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.GH_PACKAGES_TOKEN }}
           package: ./dist/core/package.json
       - name: Create Release
         if: steps.publish.outputs.type != 'none'
