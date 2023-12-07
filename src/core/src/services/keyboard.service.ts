@@ -151,8 +151,10 @@ export class MatKeyboardService {
    * @param locale The layout name
    */
   mapLocale(locale: string = this._defaultLocale): string {
-    let layout: string = undefined;
+    let layout: string = "";
     const country: string = locale
+      .split('-')
+      .shift() == undefined ? "en-US" : locale
       .split('-')
       .shift();
 
@@ -167,7 +169,7 @@ export class MatKeyboardService {
       layout = this.availableLocales[locale];
     }
 
-    if (!layout) {
+    if (layout == "") {
       throw Error(`No layout found for locale ${locale}`);
     }
 

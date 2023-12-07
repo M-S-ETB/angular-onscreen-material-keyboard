@@ -373,7 +373,7 @@ export class MatKeyboardKeyComponent implements OnInit, OnDestroy {
   // ref https://stackoverflow.com/a/2897510/1146207
   private _getCursorPosition(): number {
     if (!this.input) {
-      return;
+      return 0;
     }
 
     if ('selectionStart' in this.input.nativeElement) {
@@ -393,7 +393,7 @@ export class MatKeyboardKeyComponent implements OnInit, OnDestroy {
 
   private _getSelectionLength(): number {
     if (!this.input) {
-      return;
+      return 0;
     }
 
     if ('selectionEnd' in this.input.nativeElement) {
@@ -414,7 +414,7 @@ export class MatKeyboardKeyComponent implements OnInit, OnDestroy {
   // tslint:disable one-line
   private _setCursorPosition(position: number): boolean {
     if (!this.input) {
-      return;
+      return false;
     }
 
     this.inputValue = this.control.value;
