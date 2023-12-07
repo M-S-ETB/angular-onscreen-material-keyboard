@@ -4,14 +4,14 @@
   "description": "This package is forked from ngx-material-keyboard with bug fixes and additional features.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eFaps/angular-onscreen-material-keyboard.git"
+    "url": "git+https://github.com/M-S-ETB/angular-onscreen-material-keyboard.git"
   },
   "author": "Iris X, Daniel M, Kenneth A",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/angular-onscreen-material-keyboard/issues"
+    "url": "https://github.com/M-S-ETB/angular-onscreen-material-keyboard/issues"
   },
-  "homepage": "https://github.com/angular-onscreen-material-keyboard",
+  "homepage": "https://github.com/M-S-ETB/angular-onscreen-material-keyboard",
   "scripts": {
     "ng": "ng",
     "start": "npm run start:demo",
