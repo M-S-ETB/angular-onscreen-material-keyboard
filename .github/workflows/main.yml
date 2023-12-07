@@ -23,6 +23,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PACKAGES_TOKEN }}
           package: ./dist/core/package.json
+          registry: "https://npm.pkg.github.com"
       - name: Create Release
         if: steps.publish.outputs.type != 'none'
         id: create_release
